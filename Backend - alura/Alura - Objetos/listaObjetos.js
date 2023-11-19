@@ -27,7 +27,6 @@ cliente.enderecos.push(
 
 console.log(cliente.enderecos)
 
-
 const listaApenasPrincipal = cliente.enderecos.filter( (endereco) => endereco.principal === true ) 
 //filter devolve uma nova lista, nao um objeto. Ele retornara uma lista com um objeto.
 console.log(listaApenasPrincipal)
