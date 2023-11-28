@@ -1,10 +1,14 @@
 const clientes = require("./clientes.json");
 
-function filtrarApartamentoSemComplemento(clientes) {
-  return clientes.filter((cliente) => {
+function filtrarApartamentoSemComplemento(lista) {
+
+  return clientes.filter( (cadaCliente) => {
+
     return (
-      cliente.endereco.apartamento &&
-      !cliente.endereco.hasOwnProperty("complemento")
+
+      cadaCliente.endereco.apartamento &&
+
+      !cadaCliente.endereco.hasOwnProperty("complemento")
     );
   });
 }
@@ -12,3 +16,23 @@ function filtrarApartamentoSemComplemento(clientes) {
 const filtrados = filtrarApartamentoSemComplemento(clientes);
 
 console.log(filtrados);
+
+
+
+function filtrarCasa(lista) {
+
+  return clientes.filter( (cadaCliente) =>{
+
+    return(
+
+      cadaCliente.endereco.apartamento ===false &&
+      cadaCliente.endereco.hasOwnProperty("complemento")
+
+    )
+  })
+}
+console.log("- - - - - - - - - - - - - - - - - - ")
+
+const clientesCasa = filtrarCasa(clientes)
+
+console.log(clientesCasa)
